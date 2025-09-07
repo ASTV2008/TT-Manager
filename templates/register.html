@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Registro de jugador</h2>
+<form method="post" action="/registrar" class="form">
+  <label>Nombre<input name="nombre" required /></label>
+  <label>Correo<input type="email" name="correo" required /></label>
+  <label>Edad<input type="number" name="edad" min="8" max="100" /></label>
+  <button type="submit">Enviar solicitud</button>
+</form>
+{% endblock %}

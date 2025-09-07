@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Eliminación Directa</h2>
+<form method="post" action="/admin/generar_eliminacion">
+  <button type="submit">Generar llave</button>
+</form>
+
+{% for ronda, plist in rondas.items() %}
+  <h3>Ronda {{ ronda }}</h3>
+  <ul class="matches">
+    {% for p in plist %}
+      <li>
+        <form method="post" action="/admin/partido/{{ p.id }}/resultado">
+          <span>{{ p.jugador1_id|jugador_nombre }} vs {{ p.jugador2_id|jugador_nombre }}</span>
+          <input name="marcador" placeholder="3-2" value="{{ p.marcador or '' }}" />
+          <select name="ganador_id">
+            <option value="{{ p.jugador1_id }}">{{ p.jugador1_id|jugador_nombre }}</option>
+            {% if p.jugador2_id %}
+              <option value="{{ p.jugador2_id }}">{{ p.jugador2_id|jugador_nombre }}</option>
+            {% endif %}
+          </select>
+          <button type="submit">Guardar</button>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+{% endblock %}

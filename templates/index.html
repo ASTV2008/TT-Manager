@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Grupos</h2>
+<div class="grid">
+  {% for g in grupos %}
+    <a class="card" href="/grupos/{{ g.id }}">
+      <h3>{{ g.nombre }}</h3>
+      <p>{{ g.jugadores|length }} jugadores</p>
+    </a>
+  {% else %}
+    <p>Aún no hay grupos sorteados.</p>
+  {% endfor %}
+</div>
+{% endblock %}

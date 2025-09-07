@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Grupo {{ grupo.nombre }}</h2>
+<div class="columns">
+  <div>
+    <h3>Tabla de posiciones</h3>
+    <table>
+      <thead><tr><th>Jugador</th><th>Pts</th><th>W</th><th>L</th></tr></thead>
+      <tbody>
+        {% for r in tabla %}
+          <tr>
+            <td>{{ r.jugador.nombre }}</td>
+            <td>{{ r.puntos }}</td>
+            <td>{{ r.victorias }}</td>
+            <td>{{ r.derrotas }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>Partidos</h3>
+    <ul class="matches">
+      {% for p in partidos %}
+        <li>
+          <form method="post" action="/admin/partido/{{ p.id }}/resultado">
+            <span>{{ p.jugador1_id|jugador_nombre }} vs {{ p.jugador2_id|jugador_nombre }}</span>
+            <input name="marcador" placeholder="3-1" value="{{ p.marcador or '' }}" />
+            <select name="ganador_id">
+              <option value="{{ p.jugador1_id }}">{{ p.jugador1_id|jugador_nombre }}</option>
+              <option value="{{ p.jugador2_id }}">{{ p.jugador2_id|jugador_nombre }}</option>
+            </select>
+            <button type="submit">Guardar</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}

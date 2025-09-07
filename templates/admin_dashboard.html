@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Panel de Administración</h2>
+
+<section>
+  <h3>Inscripciones</h3>
+  <table>
+    <thead><tr><th>Jugador</th><th>Correo</th><th>Edad</th><th>Estado</th><th>Acciones</th></tr></thead>
+    <tbody>
+      {% for j in jugadores %}
+        <tr>
+          <td>{{ j.nombre }}</td>
+          <td>{{ j.correo }}</td>
+          <td>{{ j.edad }}</td>
+          <td>{{ j.estado }}</td>
+          <td>
+            <form method="post" action="/admin/aceptar/{{ j.id }}" style="display:inline">
+              <button type="submit">Aceptar</button>
+            </form>
+            <form method="post" action="/admin/rechazar/{{ j.id }}" style="display:inline">
+              <button type="submit">Rechazar</button>
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h3>Grupos</h3>
+  <form method="post" action="/admin/sortear">
+    <button type="submit">Sortear grupos</button>
+  </form>
+
+  <div class="grid">
+    {% for g in grupos %}
+      <div class="card">
+        <h4>{{ g.nombre }}</h4>
+        <ul>
+          {% for jg in g.jugadores %}
+            <li>{{ jg.jugador.nombre }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% else %}
+      <p>No hay grupos. Ejecuta el sorteo.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
