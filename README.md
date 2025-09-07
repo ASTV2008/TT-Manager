@@ -113,8 +113,8 @@ Proyecto educativo para aprender POO
 
 ## 📜 Licencia
 No License
-Copyrigth 
-No copiar
-No clonar 
-No robar
-Autoria Propia
+/Copyrigth 
+/No copiar
+/No clonar 
+/No robar
+/Autoria Propia
