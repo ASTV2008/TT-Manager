@@ -119,4 +119,4 @@ No está permitido copiar, clonar, distribuir ni reutilizar el código sin autor
 ---
 
 ## 🙌 Créditos y apoyo
-Desarrollado por Andres Santiago Torres Viuche con apoyo de **IA** para documentación y estructuración del proyecto.
+Desarrollado con apoyo de **IA** para documentación y estructuración del proyecto.
