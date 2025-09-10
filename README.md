@@ -112,9 +112,11 @@ Andres Santiago Torres Viuche
 Proyecto educativo para aprender POO
 
 ## 📜 Licencia
-No License
-/ Copyrigth 
-/ No copiar
-/ No clonar 
-/ No robar
-/ Autoria Propia
+🚫 **No License**  
+Este proyecto es de **autoría propia**.  
+No está permitido copiar, clonar, distribuir ni reutilizar el código sin autorización expresa del autor.
+
+---
+
+## 🙌 Créditos y apoyo
+Desarrollado por Andres Santiago Torres Viuche con apoyo de **IA** para documentación y estructuración del proyecto.
