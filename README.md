@@ -107,8 +107,9 @@ TT-Manager/
 5. Iniciar eliminación directa
 6. Finalizar torneo y mostrar ganador
 
-## 👨‍💻 Autor
-Andres Santiago Torres Viuche  
+## 👨‍💻 Autor/es
+Andres Santiago Torres Viuche
+Cristian Jhoan Vanegas Barrera
 Proyecto educativo para aprender POO
 
 ## 📜 Licencia
